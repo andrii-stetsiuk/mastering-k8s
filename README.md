@@ -276,17 +276,18 @@ sudo kubebuilder/bin/kubectl get --raw='/readyz?verbose'
 
 # Create Deployment
 sudo  kubebuilder/bin/kubectl create deploy demo --image nginx
-### Pod not started with status Pending
+
+## Homework
+# Pod not started with status Pending
 sudo  kubebuilder/bin/kubectl describe pod [my_pod_name]
-### 0/1 nodes are available:
-### 1 node(s) had untolerated taint {node.cloudprovider.kubernetes.io/uninitialized: true}.
-### Resolution:
+# 0/1 nodes are available:
+# 1 node(s) had untolerated taint {node.cloudprovider.kubernetes.io/uninitialized: true}.
+# Resolution:
 sudo  kubebuilder/bin/kubectl get nodes -A
 sudo  kubebuilder/bin/kubectl taint nodes [my_node_name] node.cloudprovider.kubernetes.io/uninitialized:NoSchedule-
 
 # Check all resources
 sudo kubebuilder/bin/kubectl get all -A
-```
 
 ## Notes:
 - Each component runs as a background process (&)
